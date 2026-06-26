@@ -21,3 +21,10 @@
         display: flex;
         margin-bottom: 60px;
       }
+
+      .clear-messages{
+        padding:12px 20px;
+        margin-left:10px;
+        border: none;
+        border-radius: 10px;
+      }

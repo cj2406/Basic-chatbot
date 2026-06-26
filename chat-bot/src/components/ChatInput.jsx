@@ -34,6 +34,22 @@ import './ChatInput.css'
 
           setInputText('');
         }
+        //This feature allows users to send messages by pressing enter
+        function enterMessage(event){
+          if(event.key==='Enter'){
+            sendMessage()
+          }
+         //console.log(event.key)
+        }
+
+        //a function which can clear chat messages
+        function clearChatmessages(){
+           setChatMessages([]);
+
+
+        }
+
+
 
         return (
           <div className="chat-input-container">
@@ -43,11 +59,16 @@ import './ChatInput.css'
               onChange={saveInputText}
               value={inputText}
               className="chat-input"
+              onKeyDown={enterMessage}
             />
             <button 
               onClick={sendMessage}
               className="send-button"
+              onChange={enterMessage}
             >Send</button>
+            <button
+            onClick={clearChatmessages}
+            className='clear-messages'>clear</button>
           </div>
         );
       }
